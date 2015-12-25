@@ -51,8 +51,19 @@ Player.prototype.reachedGoal = function() {
     }
     return false;
 }
+Player.prototype.collided = function() {
+    for (var enemy of allEnemies) {
+        if (this.gridYToPixels(this.y) != this.gridYToPixels(enemy.y)) {
+            continue;
+        }
+        if (Math.abs(this.x - enemy.x) <= XSTEP/2) {
+            return true;
+        }
+    }
+    return false;
+}
 Player.prototype.update = function() { 
-    if (this.reachedGoal()) {
+    if (this.reachedGoal() || this.collided()) {
         this.x = this.gridXToPixels(2);
         this.y = this.gridYToPixels(4);
     }
