@@ -1,10 +1,5 @@
 // Enemies our player must avoid
 var Enemy = function(initX,initY) {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
-
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
     this.x = 101*initX;
     this.y = -20+82*initY;
@@ -36,12 +31,36 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+var Player = function(initX,initY) {
+    this.sprite = 'images/char-boy.png'
+    this.x = 101*initX;
+    this.y = -20+82*initY;
+}
+Player.prototype.update = function() { //detect collusion
+    //TODO
+};
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+}
+Player.prototype.handleInput = function(direction) {
+    switch(direction) {
+        case 'left':
+            this.x -= 101;
+            break;
+        case 'up':
+            this.y -= 82;
+            break;
+        case 'right':
+            this.x += 101;
+            break;
+        case 'down':
+            this.y += 82;
+            break;
+    }
+}
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
 var allEnemies =[new Enemy(-2,1,200),new Enemy(-1,2,30),new Enemy(-1,3,50), new Enemy(-5,2,100)];
-
+var player = new Player(2,4);
 
 
 
@@ -54,6 +73,5 @@ document.addEventListener('keyup', function(e) {
         39: 'right',
         40: 'down'
     };
-    console.log("hey");
     player.handleInput(allowedKeys[e.keyCode]);
 });
