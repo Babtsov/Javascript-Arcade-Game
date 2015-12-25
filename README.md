@@ -1,6 +1,6 @@
-frontend-nanodegree-arcade-game
+Javascript-Arcade-Game
 ===============================
 
-Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) for self-checking their submission.
-
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+This is my solution to a mini project for practicing Object Oriented Design in Javascript.   
+Here is the  [description](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true) of which parts needed to be implemented.  
+Here is a link to [udacity's course](https://www.udacity.com/course/object-oriented-javascript--ud015) (built by Hack Reactor).
